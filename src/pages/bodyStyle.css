@@ -8,3 +8,16 @@
 #testCard {
   text-align: center;
 }
+
+#generatorContainer {
+  text-align: center;
+  padding-top: 60px;
+}
+
+#generatorHeader {
+  padding-bottom: 15px;
+}
+
+#testContainer {
+  width: 60%;
+}

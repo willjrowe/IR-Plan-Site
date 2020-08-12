@@ -21,7 +21,7 @@ const CardSection = () => (
     <Row>
       <Col />
       <Col>
-        <Card id="testCard">
+        <Card id="testCard" className="border-0">
           <Card.Body>
             <Card.Title>
               <FontAwesomeIcon icon={faCoffee} size="4x" />
@@ -35,7 +35,7 @@ const CardSection = () => (
         </Card>
       </Col>
       <Col>
-        <Card id="testCard">
+        <Card id="testCard" className="border-0">
           <Card.Body>
             <Card.Title>
               <FontAwesomeIcon icon={faCoffee} size="4x" />
@@ -49,7 +49,7 @@ const CardSection = () => (
         </Card>
       </Col>
       <Col>
-        <Card id="testCard">
+        <Card id="testCard" className="border-0">
           <Card.Body>
             <Card.Title>
               <FontAwesomeIcon icon={faCoffee} size="4x" />
@@ -76,7 +76,9 @@ const IndexPage = () => (
         <p>Helping you stay safe since Day 1</p>
         {/* padding potentially */}
         <p>
-          <Button variant="primary">Build your custom plan now!</Button>
+          <Link to="/plan/">
+            <Button variant="primary">Build your custom plan now!</Button>
+          </Link>
         </p>
       </Jumbotron>
     </Container>

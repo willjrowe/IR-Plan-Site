@@ -14,10 +14,11 @@ const Header = ({ siteTitle }) => (
       <NavBar.Toggle aria-controls="headerNav" />
       <NavBar.Collapse id="headerNav">
         <Nav className="ml-auto">
-          <Nav.Link href="./page">About</Nav.Link>
-          <Nav.Link href="./page">Contact</Nav.Link>
-          <Nav.Link href="./page">Docs</Nav.Link>
-          <Nav.Link href="./page">
+          {/* change these to gatsby links at some point */}
+          <Nav.Link>About</Nav.Link>
+          <Nav.Link>Contact</Nav.Link>
+          <Nav.Link>Docs</Nav.Link>
+          <Nav.Link>
             <FontAwesomeIcon icon={faCoffee} size="1x" />
           </Nav.Link>
         </Nav>
