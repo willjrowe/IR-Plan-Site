@@ -1,3 +1,5 @@
+// THIS WAS FOR 'DYNAMIC' PAGE GENERATION
+
 import React from "react"
 import { Link } from "gatsby"
 
@@ -9,48 +11,99 @@ import bodyStyle from "./bodyStyle.css"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import ProgressBar from "react-bootstrap/ProgressBar"
+import Fade from "react-bootstrap/Fade"
+
+const orgName = {
+  title: "Organization Name",
+  placeholderText: "Acme, Inc.",
+  description: "The name of your organization",
+}
+const authorName = {
+  title: "Author Name",
+  placeholderText: "Will",
+  description: "Your name",
+}
+const authorEmail = {
+  title: "Author Email",
+  placeholderText: "countact@counteractive.net",
+  description: "Your email",
+}
+const releaseDate = {
+  title: "Release Date",
+  placeholderText: "1 Jan 2020",
+  description: "Document control metadata",
+}
+const responseChat = {
+  title: "Response Chat",
+  placeholderText: "chat.acme.tld/codename",
+  description: "URL or reference to IR chat program",
+}
+const authorArray = [orgName, authorName, authorEmail, releaseDate]
+const responseArray = [responseChat]
+const authorPage = {
+  header: "First a bit about you...",
+  questionArray: authorArray,
+}
+const listOfPages = [authorPage]
+var pageContent = []
+
+for (var i = 0; i < listOfPages.length; i++) {
+  pageContent[i] = generateFormGroupJSX(listOfPages[i])
+}
+
+function generateFormGroupJSX(page) {
+  var questions = []
+  for (var j = 0; j < page.questionArray.length; j++) {
+    questions.push(
+      <Form.Group controlId="formBasicEmail" key={page.questionArray[j].title}>
+        <Form.Label>{page.questionArray[j].title}</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder={page.questionArray[j].placeholderText}
+        />
+        <Form.Text className="text-muted">
+          {page.questionArray[j].description}
+        </Form.Text>
+      </Form.Group>
+    )
+  }
+  return questions
+}
+
+console.log("Page content")
+console.log(pageContent)
+
+//generate html for each page
+
+var currentPage = 0
+
+function updatePage() {
+  currentPage += 1
+}
 
 const GeneratorPage = () => (
   <Layout>
     <SEO title="Plan" />
-    <Container id="generatorContainer">
-      <h1 id="generatorHeader">Your Custom Plan</h1>
-
-      <h2>First a bit about you...</h2>
-    </Container>
-    <Container id="testContainer">
-      <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Organization Name</Form.Label>
-          <Form.Control type="text" placeholder="Acme, Inc." />
-          <Form.Text className="text-muted">
-            The name of your Organization
-          </Form.Text>
-        </Form.Group>
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Author Name</Form.Label>
-          <Form.Control type="text" placeholder="Will" />
-          <Form.Text className="text-muted">Your name</Form.Text>
-        </Form.Group>
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Author Email</Form.Label>
-          <Form.Control type="text" placeholder="contact@counteractive.net" />
-          <Form.Text className="text-muted">Your email</Form.Text>
-        </Form.Group>
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Release Date</Form.Label>
-          <Form.Control type="text" placeholder="1 Jan 2020" />
-          <Form.Text className="text-muted">
-            Document control metadata
-          </Form.Text>
-        </Form.Group>
-        <Container className="text-center">
-          <Button variant="primary" type="submit" className="mb-3">
-            Next
-          </Button>
-          <ProgressBar animated now={45} />
-        </Container>
-      </Form>
+    <Container fluid>
+      <Container id="generatorContainer">
+        <h1 id="generatorHeader">Your Custom Plan</h1>
+        <h2>hi</h2>
+      </Container>
+      <Container id="testContainer">
+        <Form>
+          {pageContent[currentPage]}
+          <Container className="text-center">
+            <Button
+              variant="primary"
+              className="mb-3"
+              onClick={() => updatePage()}
+            >
+              Next
+            </Button>
+            <ProgressBar animated now={45} />
+          </Container>
+        </Form>
+      </Container>
     </Container>
   </Layout>
 )
