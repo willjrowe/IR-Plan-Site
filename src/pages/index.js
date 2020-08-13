@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
+//figure out a way to clean this up
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import bodyStyle from "./bodyStyle.css"
+import "./customStyle.css"
 import Container from "react-bootstrap/Container"
 import Jumbotron from "react-bootstrap/Jumbotron"
 import Button from "react-bootstrap/Button"
@@ -15,13 +16,24 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCoffee } from "@fortawesome/free-solid-svg-icons"
 
-//build a new custom Card
+const JumbotronSection = () => (
+  <Container fluid className="jumbotronBody">
+    <Jumbotron>
+      <h1>Incident Response Planning Made Easy</h1>
+      <p>Helping you stay safe since Day 1</p>
+      <Link to="/plan/">
+        <Button variant="primary btn-lg">Build your custom plan now!</Button>
+      </Link>
+    </Jumbotron>
+  </Container>
+)
+
 const CardSection = () => (
   <Container fluid>
     <Row>
       <Col />
       <Col>
-        <Card id="testCard" className="border-0">
+        <Card className="border-0 text-center">
           <Card.Body>
             <Card.Title>
               <FontAwesomeIcon icon={faCoffee} size="4x" />
@@ -35,7 +47,7 @@ const CardSection = () => (
         </Card>
       </Col>
       <Col>
-        <Card id="testCard" className="border-0">
+        <Card className="border-0 text-center">
           <Card.Body>
             <Card.Title>
               <FontAwesomeIcon icon={faCoffee} size="4x" />
@@ -49,7 +61,7 @@ const CardSection = () => (
         </Card>
       </Col>
       <Col>
-        <Card id="testCard" className="border-0">
+        <Card className="border-0 text-center">
           <Card.Body>
             <Card.Title>
               <FontAwesomeIcon icon={faCoffee} size="4x" />
@@ -67,31 +79,24 @@ const CardSection = () => (
   </Container>
 )
 
+const PrimaryBodySection = () => (
+  <Container>
+    <p>
+      Create your own concise, flexible, and free incident response plan here,
+      based on our compilation of best practices. Simply input your information
+      and press enter to see the changes in the preview section. Download a copy
+      by clicking the "Download" link for either HTML or Markdown format. For
+      professional assistance with incident response, or with customizing,
+      implementing, or testing your plan, please contact us.
+    </p>
+  </Container>
+)
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Container fluid id="mainBody">
-      <Jumbotron>
-        <h1>Incident Response Planning Made Easy</h1>
-        <p>Helping you stay safe since Day 1</p>
-        {/* padding potentially */}
-        <p>
-          <Link to="/plan/">
-            <Button variant="primary">Build your custom plan now!</Button>
-          </Link>
-        </p>
-      </Jumbotron>
-    </Container>
-    <Container>
-      <p>
-        Create your own concise, flexible, and free incident response plan here,
-        based on our compilation of best practices. Simply input your
-        information and press enter to see the changes in the preview section.
-        Download a copy by clicking the "Download" link for either HTML or
-        Markdown format. For professional assistance with incident response, or
-        with customizing, implementing, or testing your plan, please contact us.
-      </p>
-    </Container>
+    <JumbotronSection />
+    <PrimaryBodySection />
     <CardSection />
   </Layout>
 )

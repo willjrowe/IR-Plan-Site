@@ -1,23 +1,19 @@
-#mainBody {
+.jumbotronBody {
   padding-top: 50px;
   padding-left: 0px;
   padding-right: 0px;
   text-align: center;
 }
 
-#testCard {
-  text-align: center;
-}
-
-#generatorContainer {
+.planGeneratorHeader {
   text-align: center;
   padding-top: 60px;
 }
 
-#generatorHeader {
+.generatorHeader {
   padding-bottom: 15px;
 }
 
-#testContainer {
+.formContainer {
   width: 60%;
 }
