@@ -14,37 +14,37 @@ const formInfo = [
     title: "Compliance Team",
     description: "Compliance team name",
     placeholder: "the legal team, legal@acme.tld",
-    id: "complianceTeam",
+    id: "COMPLIANCE_TEAM",
   },
   {
     title: "Communications Team",
     description: "Communications team name",
     placeholder: "the marketing team, marketing@acme.tld",
-    id: "commsTeam",
+    id: "COMMUNICATIONS_TEAM",
   },
   {
     title: "Executive Team",
     description: "Executive team name",
     placeholder: "the front office, bosses@acme.tld",
-    id: "execTeam",
+    id: "EXECUTIVE_TEAM",
   },
   {
     title: "Legal Team",
     description: "Legal team name",
     placeholder: "the legal team, legal@acme.tld",
-    id: "legalTeam",
+    id: "LEGAL_TEAM",
   },
   {
     title: "Local Law Enforcement Contact",
     description: "Local law enforcement contact info",
     placeholder: "police@local.gov.tld",
-    id: "lleContact",
+    id: "LOCAL_LE_CONTACT",
   },
   {
     title: "FBI Contact",
     description: "FBI contact info",
     placeholder: "1-800-CALL-FBI (225-5324), https://www.fbi.gov/contact-us",
-    id: "fbiContact",
+    id: "FBI_CONTACT",
   },
 ]
 

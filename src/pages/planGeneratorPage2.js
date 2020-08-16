@@ -14,19 +14,19 @@ const formInfo = [
     title: "Response Chat",
     description: "URL or reference to IR chat program",
     placeholder: "chat.acme.tld/codename",
-    id: "responseChat",
+    id: "RESPONSE_CHAT",
   },
   {
     title: "Response Phone",
     description: "Phone number for response teleconference",
     placeholder: "123-RES-PONS",
-    id: "responsePhone",
+    id: "RESPONSE_PHONE",
   },
   {
     title: "Response VTC",
     description: "URL for response video teleconference (VTC)",
     placeholder: "video.acme.tld/codename",
-    id: "responseVTC",
+    id: "RESPONSE_VTC",
   },
 ]
 

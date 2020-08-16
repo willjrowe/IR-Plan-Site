@@ -14,31 +14,31 @@ const formInfo = [
     title: "Incident Commander Roster",
     description: "URL/path to Commander roster/list",
     placeholder: "ir.acme.tld/ic-roster",
-    id: "icRoster",
+    id: "INCIDENT_COMMANDER_ROSTER",
   },
   {
     title: "Incident Commander Pager Number",
     description: "Number to page Commander(s)",
     placeholder: "123-IR-PAGER",
-    id: "icPagerNumber",
+    id: "INCIDENT_COMMANDER_PAGER_NUMBER",
   },
   {
     title: "Incident Commander Pager URL",
     description: "URL to page Commander(s)",
     placeholder: "ir.acme.tld/ic-page",
-    id: "icPagerURL",
+    id: "INCIDENT_COMMANDER_PAGER_URL",
   },
   {
     title: "Incident Commander Response SLA",
     description: "Time to wait for on-duty IC on call",
     placeholder: "15 minutes",
-    id: "icResponseSLA",
+    id: "INCIDENT_COMMANDER_RESPONSE_SLA",
   },
   {
     title: "Update Frequency",
     description: "Time between scheduled updates",
     placeholder: "4 hours",
-    id: "updateFrequency",
+    id: "UPDATE_FREQUENCY",
   },
 ]
 

@@ -14,25 +14,25 @@ const formInfo = [
     title: "SIEM Console URL",
     description: "URL to SIEM",
     placeholder: "siem.acme.tld",
-    id: "siemURL",
+    id: "SIEM_CONSOLE_LOCATION",
   },
   {
     title: "Log Aggregator URL",
     description: "URL to log aggregator",
     placeholder: "elk.acme.tld",
-    id: "laURL",
+    id: "LOG_AGGREGATOR_CONSOLE",
   },
   {
     title: "Incident Response Template",
     description: "URL/path to IR report template",
     placeholder: "ir.acme.tld/report/template",
-    id: "irTemplate",
+    id: "INCIDENT_REPORT_TEMPLATE",
   },
   {
     title: "Incident Report Recipients",
     description: "URL/path to report recipient list",
     placeholder: "ir.acme.tld/report/recipients",
-    id: "irRecipients",
+    id: "INCIDENT_REPORT_RECIPIENTS",
   },
 ]
 

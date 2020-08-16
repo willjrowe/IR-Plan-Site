@@ -14,39 +14,39 @@ const formInfo = [
     title: "Incident Response Vendor",
     description: "Vendor for IR and infosec support",
     placeholder: "[Counteractive Security](https://www.counteractive.net)",
-    id: "irVendor",
+    id: "INCIDENT_RESPONSE_VENDOR",
   },
   {
     title: "Public Relations Vendor",
     description: "Vendor for PR support",
     placeholder: "pr.firm.tld",
-    id: "prVendor",
+    id: "PUBLIC_RELATIONS_VENDOR",
   },
   {
     title: "Insurance Vendor",
     description: "(Cyber) insurance provider",
     placeholder: "cyber.insurance.tld",
-    id: "inVendor",
+    id: "INSURANCE_VENDOR",
   },
   {
     title: "ISAC Contact",
     description: "Industry ISAC contact info",
     placeholder:
       "https://en.wikipedia.org/wiki/Information_Sharing_and_Analysis_Center",
-    id: "isacContact",
+    id: "ISAC_CONTACT",
   },
   {
     title: "AAR SLA",
     description:
       "After action review (AAR) service level agreement (time after completion of incident to conduct AAR)",
     placeholder: "5 business days",
-    id: "aarSLA",
+    id: "AAR_SLA",
   },
   {
     title: "AAR Attendees",
     description: "AAR attendees",
     placeholder: "ir.acme.tld/aar/attendees",
-    id: "aarAttendees",
+    id: "AAR_ATTENDEES",
   },
 ]
 

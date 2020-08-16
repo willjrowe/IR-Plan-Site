@@ -14,32 +14,32 @@ const formInfo = [
     title: "Incident File Location",
     description: "URL/path to incident file",
     placeholder: "ir.acme.tld/files/codename",
-    id: "ifLocation",
+    id: "INCIDENT_FILE_LOCATION",
   },
   {
     title: "Critical Info List Location",
     description:
       "URL/path to critical information list, data you want to protect",
     placeholder: "ir.acme.tld/cil",
-    id: "cilLocation",
+    id: "CRITICAL_INFO_LIST_LOCATION",
   },
   {
     title: "Critical Asset List Location",
     description: "URL/path to critical asset list, systems you want to protect",
     placeholder: "ir.acme.tld/cal",
-    id: "calLocation",
+    id: "CRITICAL_ASSET_LIST_LOCATION",
   },
   {
     title: "Asset Management Database Location",
     description: "URL/path to asset management DB",
     placeholder: "ir.acme.tld/assets",
-    id: "amdLocation",
+    id: "ASSET_MGMT_DB_LOCATION",
   },
   {
     title: "Network Map Location",
     description: "URL/path to network map",
     placeholder: "ir.acme.tld/netmap",
-    id: "nmLocation",
+    id: "NETWORK_MAP_LOCATION",
   },
 ]
 

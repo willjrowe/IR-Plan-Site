@@ -14,19 +14,19 @@ const formInfo = [
     title: "Security Team Roster",
     description: "URL/path to Security Team roster/list",
     placeholder: "ir.acme.tld/sec-roster",
-    id: "stRoster",
+    id: "SECURITY_TEAM_ROSTER",
   },
   {
     title: "Team SME Roster",
     description: "URL/path to Team SME roster/list",
     placeholder: "ir.acme.tld/sme-roster",
-    id: "smeRoster",
+    id: "TEAM_SME_ROSTER",
   },
   {
     title: "Executive Roster",
     description: "URL/path to Executive roster/list",
     placeholder: "ir.acme.tld/exec-roster",
-    id: "execRoster",
+    id: "EXECUTIVE_ROSTER",
   },
 ]
 

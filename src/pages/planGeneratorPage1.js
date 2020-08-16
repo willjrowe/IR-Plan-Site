@@ -14,31 +14,31 @@ const formInfo = [
     title: "Organization Name",
     description: "The name of your organization",
     placeholder: "Acme Inc.",
-    id: "organizationName",
+    id: "COMPANY_NAME",
   },
   {
     title: "Organization Domain",
     description: "Domain name for your organization",
     placeholder: "acme.tld",
-    id: "organizationDomain",
+    id: "ORGANIZATION_DOMAIN",
   },
   {
     title: "Author Name",
     description: "Name of plan author",
     placeholder: "Will",
-    id: "authorName",
+    id: "AUTHOR_NAME",
   },
   {
     title: "Author Email",
     description: "Email of plan author",
     placeholder: "contact@counteractive.net",
-    id: "authorEmail",
+    id: "AUTHOR_EMAIL",
   },
   {
     title: "Release Date",
     description: "Document control metadata",
     placeholder: "1 Jan 2020",
-    id: "releaseDate",
+    id: "RELEASE_DATE",
   },
 ]
 
