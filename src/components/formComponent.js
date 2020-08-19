@@ -14,14 +14,24 @@ class PlanGeneratorSamplePage extends React.Component {
   }
 
   loadData(element) {
-    if (localStorage[element.id]) {
-      document.getElementById(element.id).value = localStorage[element.id]
+    if (localStorage["currentPlan"]) {
+      var parsedCurrent = JSON.parse(localStorage["currentPlan"])
+      if (parsedCurrent[element.id]) {
+        document.getElementById(element.id).value = parsedCurrent[element.id]
+      }
     }
   }
 
   storeData(element) {
     if (document.getElementById(element.id).value) {
-      localStorage[element.id] = document.getElementById(element.id).value
+      var oldPlan = {}
+      if (localStorage["currentPlan"]) {
+        oldPlan = JSON.parse(localStorage["currentPlan"])
+      }
+      if (document.getElementById(element.id).value != "") {
+        oldPlan[element.id] = document.getElementById(element.id).value
+      }
+      localStorage["currentPlan"] = JSON.stringify(oldPlan)
     }
   }
 

@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import FormComponent from "../components/formComponent"
 
 const headerText = "Vender Info"
-const nextPageName = "/reviewPlan/"
+const nextPageName = "/planDone/"
 const prevPageName = "/planGeneratorPage7/"
 const progressBar = 100
 const formInfo = [
