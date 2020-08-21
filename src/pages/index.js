@@ -15,17 +15,32 @@ import Row from "react-bootstrap/Row"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCoffee } from "@fortawesome/free-solid-svg-icons"
+import { faBook } from "@fortawesome/free-solid-svg-icons"
+import { faHandshake } from "@fortawesome/free-solid-svg-icons"
+import { faChartBar } from "@fortawesome/free-solid-svg-icons"
+import { faExpandArrowsAlt } from "@fortawesome/free-solid-svg-icons"
 
 const JumbotronSection = () => (
-  <Container fluid className="jumbotronBody">
-    <Jumbotron>
-      <h1>Incident Response Planning Made Easy</h1>
-      <p>Helping you stay safe since Day 1</p>
-      <Link to="/plan/">
-        <Button variant="primary btn-lg">Build your custom plan now!</Button>
-      </Link>
-    </Jumbotron>
-  </Container>
+  <Jumbotron fluid className="pt-50 text-center testClass">
+    <Container>
+      <Row>
+        <Col className="col-5">
+          <h1>
+            <FontAwesomeIcon className="mt-4" icon={faBook} size="6x" />
+          </h1>
+        </Col>
+        <Col className="text-left col-7">
+          <h1 className="mt-4 bigText">IR Plan</h1>
+          <p>Helping you stay safe since Day 1</p>
+          <Link to="/plan/">
+            <Button variant="btn-lg" className="coolButton">
+              Build your custom plan now!
+            </Button>
+          </Link>
+        </Col>
+      </Row>
+    </Container>
+  </Jumbotron>
 )
 
 const CardSection = () => (
@@ -36,9 +51,13 @@ const CardSection = () => (
         <Card className="border-0 text-center">
           <Card.Body>
             <Card.Title>
-              <FontAwesomeIcon icon={faCoffee} size="4x" />
+              <FontAwesomeIcon
+                className="cardColor"
+                icon={faExpandArrowsAlt}
+                size="4x"
+              />
             </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Fast</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">Concise</Card.Subtitle>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -50,7 +69,11 @@ const CardSection = () => (
         <Card className="border-0 text-center">
           <Card.Body>
             <Card.Title>
-              <FontAwesomeIcon icon={faCoffee} size="4x" />
+              <FontAwesomeIcon
+                className="cardColor"
+                icon={faChartBar}
+                size="4x"
+              />
             </Card.Title>
             <Card.Subtitle className="mb-2 text-muted">Flexible</Card.Subtitle>
             <Card.Text>
@@ -64,9 +87,13 @@ const CardSection = () => (
         <Card className="border-0 text-center">
           <Card.Body>
             <Card.Title>
-              <FontAwesomeIcon icon={faCoffee} size="4x" />
+              <FontAwesomeIcon
+                className="cardColor"
+                icon={faHandshake}
+                size="4x"
+              />
             </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Efficient</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">Free</Card.Subtitle>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.

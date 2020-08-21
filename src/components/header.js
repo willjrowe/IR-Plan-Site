@@ -6,20 +6,29 @@ import Nav from "react-bootstrap/Nav"
 import Logo from "../images/gatsby-icon.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCoffee } from "@fortawesome/free-solid-svg-icons"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import "./header.css"
 
 const Header = ({ siteTitle }) => (
   <Container>
-    <NavBar fixed="top" bg="dark" variant="dark" expand="sm">
-      <NavBar.Brand href="/">{siteTitle}</NavBar.Brand>
+    <NavBar
+      fixed="top"
+      expand="sm"
+      id="headerCSS"
+      className="headerCSS navbar-light"
+    >
+      <NavBar.Brand id="headerCSS" className="headerCSS" href="/">
+        {siteTitle}
+      </NavBar.Brand>
       <NavBar.Toggle aria-controls="headerNav" />
       <NavBar.Collapse id="headerNav">
-        <Nav className="ml-auto">
+        <Nav className="ml-auto headerCSS">
           {/* change these to gatsby links at some point */}
-          <Nav.Link>About</Nav.Link>
-          <Nav.Link>Contact</Nav.Link>
-          <Nav.Link>Docs</Nav.Link>
-          <Nav.Link>
-            <FontAwesomeIcon icon={faCoffee} size="1x" />
+          <Nav.Link id="headerCSS">About</Nav.Link>
+          <Nav.Link id="headerCSS">Contact</Nav.Link>
+          <Nav.Link id="headerCSS">Docs</Nav.Link>
+          <Nav.Link id="headerCSS">
+            <FontAwesomeIcon icon={faGithub} size="1x" />
           </Nav.Link>
         </Nav>
       </NavBar.Collapse>
