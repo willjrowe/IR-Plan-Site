@@ -73,8 +73,7 @@ class PlanGeneratorSamplePage extends React.Component {
     return (
       <Container fluid>
         <Container className="planGeneratorHeader">
-          <h1 id="generatorHeader">Your Custom Plan</h1>
-          <h2>{this.props.headerText}</h2>
+          <h1 className="miniHeader">{this.props.headerText}</h1>
         </Container>
         <Container className="formContainer">
           <Form>

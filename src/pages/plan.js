@@ -9,32 +9,27 @@ import bodyStyle from "./customStyle.css"
 import Button from "react-bootstrap/Button"
 
 const JumbotronSection = () => (
-  <Container fluid className="jumbotronBody">
-    <Jumbotron>
-      <h1>The Plan Generator</h1>
-      <p>Helping you stay safe since Day 1</p>
-    </Jumbotron>
-  </Container>
+  <Jumbotron fluid className="jumboBackground">
+    <Container>
+      <h1 className="medText">The Plan Generator</h1>
+    </Container>
+  </Jumbotron>
 )
 
 class PrimaryBodySection extends React.Component {
   render() {
     return (
       <Container>
-        <h1>What are you building?</h1>
+        <h1 className="miniHeader">What are you building?</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          The next few pages will ask you to input some information about the
+          specifics of your organization such as contact information and team
+          rosters. Don't worry your plan is generated completely on the
+          client-side, meaning we don't collect any of your data.
         </p>
         <Link to="/planGeneratorPage1/">
           <Button variant="primary">Build a new plan!</Button>
         </Link>
-        <h2>Your Previous Plans</h2>
       </Container>
     )
   }

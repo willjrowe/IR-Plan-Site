@@ -8,12 +8,12 @@ const Footer = () => (
     <br />
     <hr />
     <p>Counteractive © {new Date().getFullYear()}</p>
-    <p>
+    {/* <p>
       <FontAwesomeIcon icon={faCoffee} size="1x" />
       <FontAwesomeIcon icon={faCoffee} size="1x" />
       <FontAwesomeIcon icon={faCoffee} size="1x" />
       <FontAwesomeIcon icon={faCoffee} size="1x" />
-    </p>
+    </p> */}
   </Container>
 )
 

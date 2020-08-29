@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import FormComponent from "../components/formComponent"
 
-const headerText = "Vender Info"
+const headerText = "Vendor Info"
 const nextPageName = "/planDone/"
 const prevPageName = "/planGeneratorPage7/"
 const progressBar = 100

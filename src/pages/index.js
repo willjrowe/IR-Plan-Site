@@ -31,7 +31,10 @@ const JumbotronSection = () => (
         </Col>
         <Col className="text-left col-7">
           <h1 className="mt-4 bigText">IR Plan</h1>
-          <p>Helping you stay safe since Day 1</p>
+          <p>
+            Free, easy Incident Response plan generation for common security
+            threats
+          </p>
           <Link to="/plan/">
             <Button variant="btn-lg" className="coolButton">
               Build your custom plan now!
@@ -57,10 +60,9 @@ const CardSection = () => (
                 size="4x"
               />
             </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Concise</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">Flexible</Card.Subtitle>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Customize your plan to fit your organization's needs
             </Card.Text>
           </Card.Body>
         </Card>
@@ -75,10 +77,10 @@ const CardSection = () => (
                 size="4x"
               />
             </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Flexible</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">Concise</Card.Subtitle>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              The default plan provides general guidelines in responding to
+              security threats
             </Card.Text>
           </Card.Body>
         </Card>
@@ -95,8 +97,7 @@ const CardSection = () => (
             </Card.Title>
             <Card.Subtitle className="mb-2 text-muted">Free</Card.Subtitle>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Our plan generation is completely free and open source
             </Card.Text>
           </Card.Body>
         </Card>

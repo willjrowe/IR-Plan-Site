@@ -19,11 +19,43 @@ blue: #77a6f7 */
   font-size: 7rem;
 }
 
+.medText {
+  font-size: 4rem;
+  color: #ffccbc;
+}
+
+.miniHeader {
+  color: #ffccbc;
+}
+
+.betterStyle {
+  color: #ffccbc;
+  font-size: 1.3rem;
+  background-color: white;
+  border: none;
+}
+
+.betterStyle:hover,
+.betterStyle:focus {
+  background-color: #f4f4f4;
+  color: #ffccbc;
+}
+
 .jumbotronBody {
   padding-top: 50px;
   padding-left: 0px;
   padding-right: 0px;
   text-align: center;
+}
+
+.jumboBackground {
+  color: #ffccbc;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-top: 75px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: center;
+  background-color: #77a6f7;
 }
 
 .testClass {
@@ -42,7 +74,7 @@ blue: #77a6f7 */
 
 .planGeneratorHeader {
   text-align: center;
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 .generatorHeader {

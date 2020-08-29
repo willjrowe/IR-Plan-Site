@@ -15,6 +15,7 @@ import docxtemplater from "docxtemplater"
 import Overlay from "react-bootstrap/Overlay"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Popover from "react-bootstrap/Popover"
+// import htmldocx from "html-docx-js"
 // import fileInput from "../../static/Hello.docx"
 
 var planString =
@@ -23,27 +24,26 @@ var planString =
 function updateLink(content, contentType, filename, idLocation) {
   const newBlob = new Blob([content], { type: contentType })
   const newURL = window.URL.createObjectURL(newBlob)
-  console.log(filename)
   document.getElementById(idLocation).href = newURL
   document.getElementById(idLocation).download = filename
 }
 
 const JumbotronSection = () => (
-  <Container fluid className="jumbotronBody">
-    <Jumbotron>
-      <h1>Your Plan Is Done</h1>
+  <Jumbotron fluid className="jumboBackground">
+    <Container>
+      <h1>Your Plan Is Done!</h1>
       <p>Download as:</p>
-      <a id="htmlDownload">
-        <Button>HTML</Button>
+      <a id="htmlDownload" className="ml-3 mr-3">
+        <Button className="betterStyle">HTML</Button>
       </a>
-      <a id="mdDownload">
-        <Button>Markdown</Button>
+      <a id="mdDownload" className="ml-3 mr-3">
+        <Button className="betterStyle">Markdown</Button>
       </a>
-      <a id="docxDownload">
-        <Button>Word</Button>
+      <a id="docxDownload" className="ml-3 mr-3">
+        <Button className="betterStyle">Word</Button>
       </a>
-    </Jumbotron>
-  </Container>
+    </Container>
+  </Jumbotron>
 )
 
 const PopOverTest = () => (
@@ -109,6 +109,17 @@ class PlanDone extends React.Component {
       inputs["COMPANY_NAME"] + " Incident Response Plan",
       "mdDownload"
     )
+    console.log(htmlPreview)
+    console.log(typeof htmlPreview)
+    // const newBlob = htmldocx.asBlob(
+    //   "<!DOCTYPE html> <html><head></head><body>" +
+    //     htmlPreview +
+    //     "</body></html>"
+    // )
+
+    // const newURL = window.URL.createObjectURL(newBlob)
+    // document.getElementById("docxDownload").href = newURL
+    // document.getElementById("docxDownload").download = "plz"
     // var args = "-f html -t docx -o word.docx"
     // callback = function (err, result) {
     //   if (err) console.error("Oh Nos: ", err)
@@ -126,7 +137,7 @@ class PlanDone extends React.Component {
     return (
       <Layout>
         <JumbotronSection />
-        <PrimaryBodySection />
+        {/* <PrimaryBodySection /> */}
         <PlanTemplateSection />
       </Layout>
     )
