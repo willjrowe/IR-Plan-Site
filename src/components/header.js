@@ -1,7 +1,8 @@
 import PropTypes from "prop-types"
 import React from "react"
-import NavBar from "react-bootstrap/NavBar"
+
 import Container from "react-bootstrap/Container"
+import NavBar from "react-bootstrap/NavBar"
 import Nav from "react-bootstrap/Nav"
 import Logo from "../images/gatsby-icon.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
