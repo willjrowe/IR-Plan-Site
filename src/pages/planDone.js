@@ -9,9 +9,9 @@ import Container from "react-bootstrap/Container"
 import "./customStyle.css"
 import { Button } from "react-bootstrap"
 // import htmldocx from "html-docx-js"
-// import fs from "fs"
-// import pizzip from "pizzip"
-// import docxtemplater from "docxtemplater"
+import fs from "browserify-fs"
+import pizzip from "pizzip"
+import docxtemplater from "docxtemplater"
 import Overlay from "react-bootstrap/Overlay"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Popover from "react-bootstrap/Popover"
@@ -111,15 +111,28 @@ class PlanDone extends React.Component {
     const testDocument = new Document()
     testDocument.addSection({
       children: [
-        new Paragraph({ text: "hello world", heading: HeadingLevel.TITLE }),
+        new Paragraph({
+          text: "hello world and " + inputs["TEST_DATE"],
+          heading: HeadingLevel.TITLE,
+        }),
       ],
     })
     Packer.toBlob(testDocument).then(blob => {
-      saveAs(blob, "example.docx")
+      saveAs(blob, "example2.docx")
     })
 
     // var testBlob = Packer.toBlob(testDocument)
-
+    // console.log("Hello world")
+    // var content = fs.readFile("../images/Hello.docx", "binary")
+    // console.log(content)
+    // var zip = new pizzip(content)
+    // var doc
+    // doc = new docxtemplater(zip)
+    // doc.setData({
+    //   name: "John",
+    // })
+    // doc.render()
+    // console.log(doc)
     updateLink(
       htmlPreview,
       "text/html",
