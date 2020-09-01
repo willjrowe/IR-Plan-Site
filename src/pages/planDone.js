@@ -8,13 +8,15 @@ import Jumbotron from "react-bootstrap/Jumbotron"
 import Container from "react-bootstrap/Container"
 import "./customStyle.css"
 import { Button } from "react-bootstrap"
-// import htmldocx from "html-docx-js"
+import { asBlob } from "html-docx-js-typescript"
 import fs from "browserify-fs"
 import pizzip from "pizzip"
 import docxtemplater from "docxtemplater"
 import Overlay from "react-bootstrap/Overlay"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Popover from "react-bootstrap/Popover"
+// import pdf from "html-pdf"
+// import html2pdf from "html-pdf-node"
 // import htmldocx from "html-docx-js"
 // import fileInput from "../../static/Hello.docx"
 import {
@@ -50,7 +52,7 @@ const JumbotronSection = () => (
       <a id="mdDownload" className="ml-3 mr-3">
         <Button className="betterStyle">Markdown</Button>
       </a>
-      <a id="docxDownload" className="ml-3 mr-3">
+      <a id="docxDownload" className="ml-3 mr-3" onClick={wordHandleClick}>
         <Button className="betterStyle">Word</Button>
       </a>
     </Container>
@@ -82,12 +84,27 @@ const PlanTemplateSection = () => (
   </Container>
 )
 
-function handleClick(target) {}
+function wordHandleClick() {
+  const testDocument = new Document()
+  testDocument.addSection({
+    children: [
+      new Paragraph({
+        text: "hello world and " + inputs["TEST_DATE"],
+        heading: HeadingLevel.TITLE,
+      }),
+    ],
+  })
+  Packer.toBlob(testDocument).then(blob => {
+    saveAs(blob, "example2.docx")
+  })
+}
+
+var inputs
 
 class PlanDone extends React.Component {
   componentDidMount() {
     var template = Hogan.compile(planString)
-    var inputs = JSON.parse(localStorage["currentPlan"])
+    inputs = JSON.parse(localStorage["currentPlan"])
     //ugly workaround for hidden inputs
     //can be updated in the future
     inputs["REVISION_NUMBER"] = "1"
@@ -102,24 +119,26 @@ class PlanDone extends React.Component {
       "[ftk imager](http://www.forensicswiki.org/wiki/FTK_Imager)"
     var markdown = template.render(inputs)
     var htmlPreview = marked(markdown)
+
     // const fileInput = require("../static/Hello.docx")
     // var reader = new FileReader()
     // reader.onload = function () {
     //   console.log(reader.result)
     // }
     // reader.readAsBinaryString(fileInput)
-    const testDocument = new Document()
-    testDocument.addSection({
-      children: [
-        new Paragraph({
-          text: "hello world and " + inputs["TEST_DATE"],
-          heading: HeadingLevel.TITLE,
-        }),
-      ],
-    })
-    Packer.toBlob(testDocument).then(blob => {
-      saveAs(blob, "example2.docx")
-    })
+
+    // const testDocument = new Document()
+    // testDocument.addSection({
+    //   children: [
+    //     new Paragraph({
+    //       text: "hello world and " + inputs["TEST_DATE"],
+    //       heading: HeadingLevel.TITLE,
+    //     }),
+    //   ],
+    // })
+    // Packer.toBlob(testDocument).then(blob => {
+    //   saveAs(blob, "example2.docx")
+    // })
 
     // var testBlob = Packer.toBlob(testDocument)
     // console.log("Hello world")
@@ -133,6 +152,7 @@ class PlanDone extends React.Component {
     // })
     // doc.render()
     // console.log(doc)
+
     updateLink(
       htmlPreview,
       "text/html",
@@ -145,11 +165,23 @@ class PlanDone extends React.Component {
       inputs["COMPANY_NAME"] + " Incident Response Plan",
       "mdDownload"
     )
-    // const newBlob = htmldocx.asBlob(
-    //   "<!DOCTYPE html> <html><head></head><body>" +
-    //     htmlPreview +
-    //     "</body></html>"
-    // )
+    var newHTML =
+      "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Report</title></head><body>" +
+      htmlPreview +
+      "</body></html>"
+    asBlob(newHTML).then(data => {
+      saveAs(data, "file.docx") // save as docx file
+    })
+
+    // let options = { format: "A4" }
+    // let file = { content: htmlPreview }
+    // html_to_pdf.generatePdf(file, options).then(pdfBuffer => {
+    //   saveAs(pdfBuffer, "test.pdf")
+    // })
+
+    // pdf.create(newHTML).then(data => {
+    //   saveAs(data, "file.pdf")
+    // })
 
     // const newURL = window.URL.createObjectURL(newBlob)
     // document.getElementById("docxDownload").href = newURL
