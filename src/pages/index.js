@@ -6,19 +6,14 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import "./customStyle.css"
-import Container from "react-bootstrap/Container"
-import Jumbotron from "react-bootstrap/Jumbotron"
-import Button from "react-bootstrap/Button"
-import Card from "react-bootstrap/Card"
-import Col from "react-bootstrap/Col"
-import Row from "react-bootstrap/Row"
-import "bootstrap/dist/css/bootstrap.min.css"
+import { Container, Jumbotron, Button, Card, Col, Row } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCoffee } from "@fortawesome/free-solid-svg-icons"
-import { faBook } from "@fortawesome/free-solid-svg-icons"
-import { faHandshake } from "@fortawesome/free-solid-svg-icons"
-import { faChartBar } from "@fortawesome/free-solid-svg-icons"
-import { faExpandArrowsAlt } from "@fortawesome/free-solid-svg-icons"
+import {
+  faBook,
+  faHandshake,
+  faChartBar,
+  faExpandArrowsAlt,
+} from "@fortawesome/free-solid-svg-icons"
 
 const JumbotronSection = () => (
   <Jumbotron fluid className="pt-50 text-center testClass">

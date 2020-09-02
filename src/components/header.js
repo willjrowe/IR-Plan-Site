@@ -1,12 +1,10 @@
 import PropTypes from "prop-types"
 import React from "react"
 
-import Container from "react-bootstrap/Container"
+import { Container, Nav } from "react-bootstrap"
 import NavBar from "react-bootstrap/Navbar"
-import Nav from "react-bootstrap/Nav"
 import Logo from "../images/gatsby-icon.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCoffee } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import "./header.css"
 

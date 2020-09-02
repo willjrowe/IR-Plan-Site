@@ -1,34 +1,12 @@
 import React from "react"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Hogan from "hogan.js"
 import marked from "marked"
-import Jumbotron from "react-bootstrap/Jumbotron"
-import Container from "react-bootstrap/Container"
+import { Jumbotron, Container, Button } from "react-bootstrap"
 import "./customStyle.css"
-import { Button } from "react-bootstrap"
 import { asBlob } from "html-docx-js-typescript"
-import fs from "browserify-fs"
-import pizzip from "pizzip"
-import docxtemplater from "docxtemplater"
-import Overlay from "react-bootstrap/Overlay"
-import OverlayTrigger from "react-bootstrap/OverlayTrigger"
-import Popover from "react-bootstrap/Popover"
-// import pdf from "html-pdf"
-// import html2pdf from "html-pdf-node"
-// import htmldocx from "html-docx-js"
-// import fileInput from "../../static/Hello.docx"
-import {
-  AlignmentType,
-  Document,
-  HeadingLevel,
-  Packer,
-  Paragraph,
-  TabStopPosition,
-  TabStopType,
-  TextRun,
-} from "docx"
 import { saveAs } from "file-saver"
 
 var planString =
@@ -37,6 +15,12 @@ var planString =
 function updateLink(content, contentType, filename, idLocation) {
   const newBlob = new Blob([content], { type: contentType })
   const newURL = window.URL.createObjectURL(newBlob)
+  document.getElementById(idLocation).href = newURL
+  document.getElementById(idLocation).download = filename
+}
+
+function updateWordLink(blob, filename, idLocation) {
+  const newURL = window.URL.createObjectURL(blob)
   document.getElementById(idLocation).href = newURL
   document.getElementById(idLocation).download = filename
 }
@@ -52,52 +36,20 @@ const JumbotronSection = () => (
       <a id="mdDownload" className="ml-3 mr-3">
         <Button className="betterStyle">Markdown</Button>
       </a>
-      <a id="docxDownload" className="ml-3 mr-3" onClick={wordHandleClick}>
+      <a id="docxDownload" className="ml-3 mr-3">
         <Button className="betterStyle">Word</Button>
       </a>
     </Container>
   </Jumbotron>
 )
 
-const PopOverTest = () => (
-  <Popover id="popover-basic">
-    <Popover.Title as="h3">Popover right</Popover.Title>
-    <Popover.Content>
-      And here's some <strong>amazing</strong> content. It's very engaging.
-      right?
-    </Popover.Content>
-  </Popover>
-)
-
-const PrimaryBodySection = () => (
-  <Container className="text-center">
-    Here's your plan. Would you like to take a quick tour?
-    <OverlayTrigger trigger="click" placement="right" overlay={PopOverTest}>
-      <Button variant="success">Click me to see</Button>
-    </OverlayTrigger>
-  </Container>
-)
+const PrimaryBodySection = () => <Container className="text-center"></Container>
 
 const PlanTemplateSection = () => (
   <Container className="mt-4 borderClass">
     <p id="planTemplate"></p>
   </Container>
 )
-
-function wordHandleClick() {
-  const testDocument = new Document()
-  testDocument.addSection({
-    children: [
-      new Paragraph({
-        text: "hello world and " + inputs["TEST_DATE"],
-        heading: HeadingLevel.TITLE,
-      }),
-    ],
-  })
-  Packer.toBlob(testDocument).then(blob => {
-    saveAs(blob, "example2.docx")
-  })
-}
 
 var inputs
 
@@ -119,40 +71,6 @@ class PlanDone extends React.Component {
       "[ftk imager](http://www.forensicswiki.org/wiki/FTK_Imager)"
     var markdown = template.render(inputs)
     var htmlPreview = marked(markdown)
-
-    // const fileInput = require("../static/Hello.docx")
-    // var reader = new FileReader()
-    // reader.onload = function () {
-    //   console.log(reader.result)
-    // }
-    // reader.readAsBinaryString(fileInput)
-
-    // const testDocument = new Document()
-    // testDocument.addSection({
-    //   children: [
-    //     new Paragraph({
-    //       text: "hello world and " + inputs["TEST_DATE"],
-    //       heading: HeadingLevel.TITLE,
-    //     }),
-    //   ],
-    // })
-    // Packer.toBlob(testDocument).then(blob => {
-    //   saveAs(blob, "example2.docx")
-    // })
-
-    // var testBlob = Packer.toBlob(testDocument)
-    // console.log("Hello world")
-    // var content = fs.readFile("../images/Hello.docx", "binary")
-    // console.log(content)
-    // var zip = new pizzip(content)
-    // var doc
-    // doc = new docxtemplater(zip)
-    // doc.setData({
-    //   name: "John",
-    // })
-    // doc.render()
-    // console.log(doc)
-
     updateLink(
       htmlPreview,
       "text/html",
@@ -165,38 +83,18 @@ class PlanDone extends React.Component {
       inputs["COMPANY_NAME"] + " Incident Response Plan",
       "mdDownload"
     )
-    var newHTML =
+    var docxPreview =
       "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Report</title></head><body>" +
       htmlPreview +
       "</body></html>"
-    asBlob(newHTML).then(data => {
-      saveAs(data, "file.docx") // save as docx file
+    asBlob(docxPreview).then(data => {
+      updateWordLink(
+        data,
+        inputs["COMPANY_NAME"] + " Incident Response Plan",
+        "docxDownload"
+      )
     })
-
-    // let options = { format: "A4" }
-    // let file = { content: htmlPreview }
-    // html_to_pdf.generatePdf(file, options).then(pdfBuffer => {
-    //   saveAs(pdfBuffer, "test.pdf")
-    // })
-
-    // pdf.create(newHTML).then(data => {
-    //   saveAs(data, "file.pdf")
-    // })
-
-    // const newURL = window.URL.createObjectURL(newBlob)
-    // document.getElementById("docxDownload").href = newURL
-    // document.getElementById("docxDownload").download = "plz"
-    // var args = "-f html -t docx -o word.docx"
-    // callback = function (err, result) {
-    //   if (err) console.error("Oh Nos: ", err)
-    //   // Without the -o arg, the converted value will be returned.
-    //   return console.log(result), result
-    // }
-
-    // // Call pandoc
-    // pandoc(src, args, callback)
     document.getElementById("planTemplate").innerHTML = htmlPreview
-    document.getElementById("assess")
   }
 
   render() {

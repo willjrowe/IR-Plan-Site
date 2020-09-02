@@ -1,10 +1,7 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
-import Container from "react-bootstrap/Container"
+import { Container, Form, Button, ProgressBar } from "react-bootstrap"
 import "../pages/customStyle.css"
-import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
-import ProgressBar from "react-bootstrap/ProgressBar"
 
 class PlanGeneratorSamplePage extends React.Component {
   formContent = this.buildFormContent()

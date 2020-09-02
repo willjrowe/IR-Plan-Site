@@ -3,10 +3,8 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Jumbotron from "react-bootstrap/Jumbotron"
-import Container from "react-bootstrap/Container"
-import bodyStyle from "./customStyle.css"
-import Button from "react-bootstrap/Button"
+import { Jumbotron, Container, Button } from "react-bootstrap"
+import "./customStyle.css"
 
 const JumbotronSection = () => (
   <Jumbotron fluid className="jumboBackground">
