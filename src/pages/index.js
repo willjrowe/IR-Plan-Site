@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 
 //figure out a way to clean this up
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import "./customStyle.css"
 import { Container, Jumbotron, Button, Card, Col, Row } from "react-bootstrap"

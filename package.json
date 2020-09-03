@@ -1,6 +1,5 @@
 {
   "name": "gatsby-starter-default",
-  "private": true,
   "description": "In progress",
   "version": "0.0.1",
   "author": "William Rowe",
@@ -19,6 +18,9 @@
     "gatsby-plugin-manifest": "^2.4.22",
     "gatsby-plugin-offline": "^3.2.22",
     "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-sharp": "^2.6.31",
+    "gatsby-source-filesystem": "^2.3.27",
+    "gatsby-transformer-sharp": "^2.5.14",
     "hogan.js": "^3.0.2",
     "html-docx-js": "^0.3.1",
     "html-docx-js-typescript": "^0.1.5",
@@ -32,6 +34,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -45,11 +48,13 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gh-pages -d public",
+    "cleangh" : "gh-pages-clean"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/willjrowe/IR-Plan-Site"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
