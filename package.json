@@ -50,7 +50,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "cleangh" : "gh-pages-clean"
+    "cleangh": "gh-pages-clean"
   },
   "repository": {
     "type": "git",
