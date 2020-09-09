@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => (
       id="headerCSS"
       className="headerCSS navbar-light"
     >
-      <NavBar.Brand id="headerCSS" className="headerCSS" href="/">
+      <NavBar.Brand id="headerCSS" className="headerCSS" href="/IR-Planner/">
         {siteTitle}
       </NavBar.Brand>
       <NavBar.Toggle aria-controls="headerNav" />

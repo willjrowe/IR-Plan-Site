@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/IR-Plan-Page",
+  pathPrefix: "/IR-Planner",
   siteMetadata: {
     title: `Counteractive`,
     description: `In progress`,
