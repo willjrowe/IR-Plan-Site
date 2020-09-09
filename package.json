@@ -42,15 +42,15 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths",
-    "cleangh": "gh-pages-clean"
+    "deploy": "gatsby build --prefix-paths && node ./scripts/deploy-gh",
+    "cleangh" : "gh-pages-clean"
   },
   "repository": {
     "type": "git",
