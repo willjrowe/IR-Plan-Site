@@ -26,7 +26,10 @@ const Header = ({ siteTitle }) => (
           <Nav.Link id="headerCSS">About</Nav.Link>
           <Nav.Link id="headerCSS">Contact</Nav.Link>
           <Nav.Link id="headerCSS">Docs</Nav.Link>
-          <Nav.Link id="headerCSS">
+          <Nav.Link
+            href="https://github.com/counteractive/incident-response-plan-template"
+            id="headerCSS"
+          >
             <FontAwesomeIcon icon={faGithub} size="1x" />
           </Nav.Link>
         </Nav>
