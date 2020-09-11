@@ -1,9 +1,11 @@
 module.exports = {
   pathPrefix: "/IR-Planner",
   siteMetadata: {
-    title: `Counteractive`,
-    description: `In progress`,
-    author: `William Rowe`,
+    title: `IR Plan Generator`,
+    description: `A free Incident Response plan generator for you!`,
+    author: `Counteractive`,
+    url: "https://www.willrowe.gq",
+    image: "/images/gatsby-astronaut.jpg",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -12,6 +14,12 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/counteractive-logo.svg`,
       },
     },
 
