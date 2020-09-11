@@ -55,19 +55,23 @@ var inputs
 class PlanDone extends React.Component {
   componentDidMount() {
     var template = Hogan.compile(planString)
-    inputs = JSON.parse(localStorage["currentPlan"])
+    var oldPlan = {}
+    if (localStorage["currentPlan"]) {
+      oldPlan = JSON.parse(localStorage["currentPlan"])
+    }
     //ugly workaround for hidden inputs
-    //can be updated in the future
-    inputs["REVISION_NUMBER"] = "1"
-    inputs["REVIEW_DATE"] = "1 Jan 2020" //could use js date obejct
-    inputs["TEST_DATE"] = "1 Jan 2020"
-    inputs["ALTERNATE_EMAIL"] = "ir.acme.tld/mail"
-    inputs["LIVE_RESPONSE_TOOL"] =
+    oldPlan["REVISION_NUMBER"] = "1"
+    oldPlan["REVIEW_DATE"] = "1 Jan 2020" //could use js date obejct
+    oldPlan["TEST_DATE"] = "1 Jan 2020"
+    oldPlan["ALTERNATE_EMAIL"] = "ir.acme.tld/mail"
+    oldPlan["LIVE_RESPONSE_TOOL"] =
       "[ir-rescue](https://github.com/diogo-fernan/ir-rescue)"
-    inputs["MEMORY_COLLECTION_TOOL"] =
+    oldPlan["MEMORY_COLLECTION_TOOL"] =
       "[rekall](http://www.rekall-forensic.com/)"
-    inputs["DISK_IMAGE_TOOL"] =
+    oldPlan["DISK_IMAGE_TOOL"] =
       "[ftk imager](http://www.forensicswiki.org/wiki/FTK_Imager)"
+    localStorage["currentPlan"] = JSON.stringify(oldPlan)
+    inputs = JSON.parse(localStorage["currentPlan"])
     var markdown = template.render(inputs)
     var htmlPreview = marked(markdown)
     updateLink(

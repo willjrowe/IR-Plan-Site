@@ -5,7 +5,7 @@ module.exports = {
     description: `A free Incident Response plan generator for you!`,
     author: `Counteractive`,
     url: "https://www.willrowe.gq",
-    image: "/images/gatsby-astronaut.jpg",
+    image: "/images/counteractive-logo.svg",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -3,7 +3,6 @@ import React from "react"
 
 import { Container, Nav } from "react-bootstrap"
 import NavBar from "react-bootstrap/Navbar"
-import Logo from "../images/gatsby-icon.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import "./header.css"
