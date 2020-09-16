@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => (
       className="headerCSS navbar-light"
     >
       <NavBar.Brand id="headerCSS" className="headerCSS">
-        <Link id="headerCSS" to="/IR-Planner/">
+        <Link id="headerCSS" to="/">
           {siteTitle}
         </Link>
       </NavBar.Brand>
@@ -25,17 +25,17 @@ const Header = ({ siteTitle }) => (
       <NavBar.Collapse id="headerNav">
         <Nav className="ml-auto headerCSS">
           {/* change these to gatsby links at some point */}
-          <Nav.Link>
+          <Nav.Link id="headerCSS">
             <Link id="headerCSS" to="/about/">
               About
             </Link>
           </Nav.Link>
-          <Nav.Link>
+          <Nav.Link id="headerCSS">
             <Link id="headerCSS" to="/playbooks/">
               Playbooks
             </Link>
           </Nav.Link>
-          <Nav.Link>
+          <Nav.Link id="headerCSS">
             <Link id="headerCSS" to="/contact/">
               Contact
             </Link>
