@@ -42,7 +42,11 @@ const JumbotronSection = () => (
   </Jumbotron>
 )
 
-const PrimaryBodySection = () => <Container className="text-center"></Container>
+const PrimaryBodySection = () => (
+  <Container className="text-center">
+    Want more? See the Playbooks page for more specific plans!
+  </Container>
+)
 
 const PlanTemplateSection = () => (
   <Container className="mt-4 borderClass">
@@ -104,7 +108,7 @@ class PlanDone extends React.Component {
     return (
       <Layout>
         <JumbotronSection />
-        {/* <PrimaryBodySection /> */}
+        <PrimaryBodySection />
         <PlanTemplateSection />
       </Layout>
     )
