@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 
+import { Link } from "gatsby"
 import { Container, Nav } from "react-bootstrap"
 import NavBar from "react-bootstrap/Navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -15,16 +16,30 @@ const Header = ({ siteTitle }) => (
       id="headerCSS"
       className="headerCSS navbar-light"
     >
-      <NavBar.Brand id="headerCSS" className="headerCSS" href="/IR-Planner/">
-        {siteTitle}
+      <NavBar.Brand id="headerCSS" className="headerCSS">
+        <Link id="headerCSS" to="/IR-Planner/">
+          {siteTitle}
+        </Link>
       </NavBar.Brand>
       <NavBar.Toggle aria-controls="headerNav" />
       <NavBar.Collapse id="headerNav">
         <Nav className="ml-auto headerCSS">
           {/* change these to gatsby links at some point */}
-          <Nav.Link id="headerCSS">About</Nav.Link>
-          <Nav.Link id="headerCSS">Contact</Nav.Link>
-          <Nav.Link id="headerCSS">Docs</Nav.Link>
+          <Nav.Link>
+            <Link id="headerCSS" to="/about/">
+              About
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link id="headerCSS" to="/playbooks/">
+              Playbooks
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link id="headerCSS" to="/contact/">
+              Contact
+            </Link>
+          </Nav.Link>
           <Nav.Link
             href="https://github.com/counteractive/incident-response-plan-template"
             id="headerCSS"
