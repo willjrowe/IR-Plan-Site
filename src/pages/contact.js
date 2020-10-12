@@ -24,8 +24,10 @@ class PrimaryBodySection extends React.Component {
         <p>Github: https://github.com/counteractive</p>
         <h1 className="miniHeader">Issues with this site?</h1>
         <p>
-          Please fill out the below form or email (make this a mini link)
-          contact@counteractive.net ADD INPUT FORM HERE
+          Please email{" "}
+          <a href="mailto: contact@counteractive.net ">
+            contact@counteractive.net.
+          </a>
         </p>
       </Container>
     )

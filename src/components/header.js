@@ -43,6 +43,7 @@ const Header = ({ siteTitle }) => (
           <Nav.Link
             href="https://github.com/counteractive/incident-response-plan-template"
             id="headerCSS"
+            target="_blank"
           >
             <FontAwesomeIcon icon={faGithub} size="1x" />
           </Nav.Link>
