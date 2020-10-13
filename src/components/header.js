@@ -7,6 +7,9 @@ import NavBar from "react-bootstrap/Navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import "./header.css"
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+config.autoAddCss = false
 
 const Header = ({ siteTitle }) => (
   <Container>

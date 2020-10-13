@@ -13,6 +13,9 @@ import {
   faChartBar,
   faExpandArrowsAlt,
 } from "@fortawesome/free-solid-svg-icons"
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+config.autoAddCss = false
 
 const JumbotronSection = () => (
   <Jumbotron fluid className="pt-50 text-center testClass">
