@@ -109,10 +109,10 @@ const PrimaryBodySection = () => (
     <p>
       Create your own concise, flexible, and free incident response plan here,
       based on our compilation of best practices. Simply input your information
-      and press enter to see the changes in the preview section. Download a copy
-      by clicking the "Download" link for either HTML or Markdown format. For
-      professional assistance with incident response, or with customizing,
-      implementing, or testing your plan, please contact us.
+      in the following form. Download a copy by clicking the "Download" link for
+      either Word, HTML, or Markdown format. For professional assistance with
+      incident response, or with customizing, implementing, or testing your
+      plan, please contact us.
     </p>
   </Container>
 )
